@@ -8,25 +8,23 @@
 <h1>Register With Us!</h1>
     <form method="POST" action="https://requestb.in/11yop061">
         <label for="Email">Email: </label>
-        <input id="Email" name="email" placeholder="example@domain.com">
+        <input id="Email" name="email" placeholder="example@domain.com" required>
 
         <br>
         <br>
 
         <label for="password">Password: </label>
-        <input id="password" name="password" placeholder="5 characters minimum">
+        <input id="password" name="password" placeholder="5 characters minimum" required>
 
         <h2><label for="bio">Biography</label></h2>
         <textarea id="bio" name="bio" placeholder="Tell us about you!" rows="25" cols="100"></textarea>
 
         <br>
         <br>
-
+        
         <!--radio buttons-->
-        <strong><label>How did you hear about us? (You can select multiple answers.)</label></strong>
-        <label>
-            <br>
-            <br>
+        <p><strong><label>How did you hear about us? (You can select multiple answers.)</label></strong></p>
+
             <input type="radio" name="bill" value="billboard">Billboard
         </label>
         <label>
