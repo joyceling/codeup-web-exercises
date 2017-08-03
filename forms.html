@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Veridian Dynamics - Register With Us!</title>
-    <link rel="stylesheet" href="CSS_lecture_stylesheet.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
+<div id="header">
 <h1>Register With Us!</h1>
+</div>
+
     <form method="POST" action="https://requestb.in/11yop061">
-        <label for="Email">Email: </label>
-        <input type="email" id="Email" name="email" placeholder="example@domain.com" required>
-        <input type="color">
-        Quantity:
-        <input type="number" name="points" min="0" max="100" step="10" value="30">
-        Search Google:
-        <input type="search" name="googlesearch">
+<br>
+
+
+            <img src="img/pexels-photo-317385.jpeg" alt="" width="300px" height="200px" class="left" id="journal">
+
+            <img src="img/pexels-photo-380769.jpeg" alt="" width="300px" height="200px" class="right" id="working">
+
+
+        <div>
+        <div id="border">
+
+    <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder=" example@domain.com" required>
 
         <br>
         <br>
 
         <label for="password">Password: </label>
-        <input id="password" name="password" type="password" placeholder="5 characters minimum" required>
+        <input id="password" name="password" type="password" placeholder=" 5 characters minimum" required>
+        </div>
+    </div>
 
+        <div>
         <h2><label for="bio">Biography</label></h2>
-        <textarea id="bio" name="bio" placeholder="Tell us about you!" rows="25" cols="100"></textarea>
+        <textarea id="bio" name="bio" placeholder="    Tell us about you!"></textarea>
+        </div>
 
-        <br>
-        <br>
-
+        <div>
         <!--radio buttons-->
         <p><strong><label>How did you hear about us? (You can select multiple answers.)</label></strong></p>
 
@@ -42,10 +54,11 @@
         <label>
             <input type="radio" name="oth" value="other">Other
         </label>
+        </div>
 
         <br>
-        <br>
 
+        <div>
         <!--drop-down menu-->
         <strong><label for="browser">What web browser are you using?</label></strong>
         <select id="browser" name="browser">
@@ -56,11 +69,24 @@
             <option value="opera">Opera</option>
             <option value="other">Other</option>
         </select>
+        </div>
 
         <br>
-        <br>
 
-        <button>Register</button>
+
+        <img src="img/pexels-photo-380768.jpeg" width="300px" height="200px" class="left" id="workspace"/>
+        <img src="img/coffee-work-desk-mug-keyboard-162616.jpeg" width="300px" height="200px" class="right" id="coffee"/>
+
+        <div>
+        <button id="button">Register</button>
+        </div>
     </form>
+    <footer>
+
+        <p id="footer">
+            © 2017 Veridian Dynamics
+        </p>
+
+    </footer>
 </body>
 </html>

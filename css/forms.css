@@ -1,0 +1,108 @@
+h1 {
+    font-size: 75px;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    position: relative;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+body {
+    background-color: cadetblue;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    height: 500px;
+}
+
+textarea {
+    border: none;
+    /*this is for the curvature of the textarea*/
+    border-radius: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: #464442;
+    height: 200px;
+    width: 400px;
+
+}
+
+#button {
+    height: 50px;
+    width: 100px;
+    font-family: 'Oswald', sans-serif;
+    border: 3px solid white;
+    color: white;
+    font-size: 15px;
+}
+
+#button:hover {
+    background-color: #464442;
+}
+
+div {
+    text-align: center;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+
+#border {
+    border: 3px solid white;
+    border-style: double;
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+}
+
+#header {
+    height: 135px;
+    background-color: #464442;
+    margin: 0px;
+}
+
+
+#working {
+    position: relative;
+    right: 35px;
+    top: 20px;
+}
+
+#journal {
+    position: relative;
+    left: 35px;
+    top: 20px;
+}
+
+#workspace {
+    position: relative;
+    bottom: 200px;
+    left: 35px;
+}
+
+#coffee {
+    position: relative;
+    bottom: 200px;
+    right: 35px;
+}
+
+#footer {
+    float: left;
+}
+
+#email {
+    border-radius: 5px;
+}
+
+#password {
+    border-radius: 5px;
+}
