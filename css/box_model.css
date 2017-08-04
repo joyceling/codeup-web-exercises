@@ -1,0 +1,44 @@
+h1 {
+    text-decoration: underline;
+    color: #613096;
+}
+
+
+.box {
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+#red {
+    background-color: #D84231;
+}
+
+#orange {
+    background-color: #EAAE33;
+    margin-left: 30px;
+}
+
+#yellow {
+    background-color: #FDF834;
+    margin-left: 60px ;
+}
+
+#green {
+    background-color: #578C05;
+    margin-left: 90px;
+}
+
+#blue {
+    background-color: #234AFB;
+    margin-left: 120px;
+}
+
+#violet {
+    background-color: #DF8BF0;
+    margin-left: 150px;
+}
