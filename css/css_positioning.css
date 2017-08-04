@@ -1,0 +1,59 @@
+h1 {
+    text-decoration: underline;
+    color: #613096;
+    margin-bottom: 0;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    color: white;
+    font-weight: bold;
+    float: left;
+    position: relative;
+}
+
+div>img {
+    position: absolute;
+    bottom: 57px;
+    left: 51px;
+}
+
+body>img {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+#red {
+    background-color: #D84231;
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+#orange {
+    background-color: #EAAE33;
+    margin-top: 50px;
+}
+
+#yellow {
+    background-color: #FDF834;
+    margin-top: 50px;
+}
+
+#green {
+    background-color: #578C05;
+    clear: left;
+}
+
+#blue {
+    background-color: #234AFB;
+}
+
+#violet {
+    background-color: #DF8BF0;
+}

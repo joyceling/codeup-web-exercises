@@ -1,0 +1,37 @@
+#blue {
+    height:200px;
+    width: 300px;
+    border: 1px solid blue;
+    background-color: blue;
+    position:relative;
+    top: 234px;
+    left: 347px;
+}
+
+.red {
+    height: 30px;
+    width:400px;
+    border: 10px solid white;
+    background-color: red;
+    position: absolute;
+    top: 82px;
+    left: -50px;
+}
+
+#up {
+    transform: rotate(90deg);
+}
+
+#left {
+    transform: rotate(33deg);
+    left: -47px;
+    position: absolute;
+    top: 86px;
+}
+
+#right {
+    transform:rotate(328deg);
+    position: absolute;
+    bottom:30px;
+    right: 30px;
+}
