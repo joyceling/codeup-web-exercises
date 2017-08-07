@@ -6,6 +6,16 @@
     position:relative;
     top: 234px;
     left: 347px;
+    overflow: hidden;
+}
+
+.white {
+    height: 100px;
+    width: 400px;
+    background-color: white;
+    position: relative;
+    bottom: 101px;
+    right: 10px;
 }
 
 .red {
@@ -34,4 +44,13 @@
     position: absolute;
     bottom:30px;
     right: 30px;
+}
+
+#cover {
+    height: 30px;
+    width:400px;
+    position: absolute;
+    left: -40px;
+    transform: rotate(90deg);
+    background-color: red;
 }
