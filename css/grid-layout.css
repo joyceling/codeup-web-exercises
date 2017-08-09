@@ -1,0 +1,74 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+    overflow: auto;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: 1px solid gray;
+}
+
+.one {
+    width:100%;
+}
+
+.one-half {
+    width: 50%;
+}
+
+.one-third {
+    width: 33%;
+
+}
+
+.two-third {
+    width: 67%;
+}
+
+.one-fourth {
+    width: 25%;
+}
+
+.one-sixth {
+    width: 16.66%;
+}
+
+.offset-five-eighths {
+    width: 62.5%;
+    float: left;
+}
+
+.one-eighth {
+    width: 12.5%;
+}
+
+@media screen and (max-width: 768px) {
+    .one-third,
+    .one-half,
+    .one-fourth,
+    .one-sixth,
+    .one-eight,
+    .two-third {
+        width: 100%
+    }
+
+    footer .one-fourth {
+        width: 25%;
+    }
+}
+
+
+
+
