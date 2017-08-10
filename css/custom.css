@@ -9,8 +9,8 @@ body {
     text-align: center;
     padding: 10px;
     margin: 10px;
-    font-size: 10px;
-    height: 70px;
+    font-size: 40px;
+    height: 60px;
     width: 100%;
 }
 
@@ -25,6 +25,8 @@ div.container {
 div.jumbotron {
     padding: 40px 0;
     background-image: url(../img/pizza.png);
+    margin-bottom: 0;
+
 }
 
 .pizza {
@@ -32,8 +34,8 @@ div.jumbotron {
     background-size: 100% 50%;
 }
 
-.list-group {
-    margin: 15px;
+nav.navbar.navbar-default {
+    margin: 0;
 }
 
 
@@ -67,3 +69,4 @@ div.panel.panel-default.sauce {
 div.panel {
     margin: 15px;
 }
+
