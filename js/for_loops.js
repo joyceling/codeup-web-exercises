@@ -8,7 +8,7 @@ console.log("This is the times table exercise...")
 var timesNumber = prompt("Choose a number between 1 and 10.");
 
 for (var i = 1; i <= 10; i++) {
-    console.log(timesNumber + "x" + i);
+    console.log(timesNumber + "x" + i + "=" + timesNumber * i);
 }
 
 // 10 RANDOM NUMBERS
@@ -16,7 +16,13 @@ console.log("This is the 10 random numbers exercise...");
 
 for (var i = 1; i<=10; i++) {
     var userNumber = Math.floor(Math.random() * 180) + 20;
-    console.log(userNumber);
+
+    if (i % 2 === 0) {
+        console.log(userNumber + " is even.");
+    } else {
+        console.log(userNumber + " is odd");
+    }
+
 }
 
 // THE NUMBER PYRAMID
@@ -36,13 +42,13 @@ console.log("This is the number pyramid exercise...");
 // The Repeat Method
 
 for (var i = 1; i<=10; i++) {
-    var str = (i.toString().repeat(i));
+    // var str = (i.toString().repeat(i));
+    // if (i>9) {
+    //      str = str.replace(/1/g , "");
+    // }
+    // console.log(str);
 
-    if (i>9) {
-         str = str.replace(/1/g , "");
-    }
-
-    console.log(str);
+    console.log((i%10).toString().repeat(i));
 }
 
 
@@ -51,13 +57,14 @@ for (var i = 1; i<=10; i++) {
 for (var i = 1; i<=10; i++) {
     var str2 = "";
 
-    for (var j = 0; i > j; j++) {
+    for (var j = 1; i >= j; j++) {
 
-        str2 = str2 + i
+        str2 += i % 10;
 
-        if (i > 9) {
-            str2 = str2.replace("1", "");
-        }
+        // if (i > 9) {
+        //     str2 = str2.replace("1", "");
+        // }
+
 
     }
 

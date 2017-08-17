@@ -4,7 +4,7 @@
 console.log("This is the loop and continue exercise: ");
 
 while (true) {
-    var userString = prompt("Please enter a number between 1 and 50.");
+    var userString = prompt("Please enter a number between 1 and 50 that is really odd (and definitely not normal ;) ).");
     var userNumber = parseInt(userString);
 
     if ((userNumber > 1) && (userNumber < 50) && (userNumber % 2 !== 0)) {
