@@ -9,6 +9,18 @@
  *  > sayHello("codeup") // returns "Hello, codeup!"
  */
 
+function sayHello(name) {
+  "Hello, " + name + "!";
+}
+
+console.log(sayHello("codeup"));
+
+function increment(x) {
+    x + 1;
+}
+
+var four = increment(3);
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
