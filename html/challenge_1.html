@@ -6,29 +6,32 @@
 </head>
 <body>
     <script>
-        (function () {
 
-            var userNumber = prompt("Please enter a number below: ")
+        // CHALLENGE #1
 
+        function fizzBuzz (n) {
 
-            for (var i = 1; i < 2; i++) {
-//                i.toString();
-//                var str = i+ ", ";
+            for (var i = 1; i <= n; i++) {
+                var str = i.toString();
 
-                for (var j = 1; j <= userNumber; j++) {
-                    var str = j + ", ";
+                if (str % 3 === 0 && str % 5 !== 0) {
+                    console.log("Fizz");
+                } else if (str % 5 === 0 && str % 3 !== 0) {
+                    console.log("Buzz");
+                } else if (str % 3 === 0 && str % 5 === 0) {
+                    console.log("FizzBuzz")
+                } else {
+                    console.log(str);
                 }
 
-
-//                var divThree = i % 3 === 0
-//                var divFive = i % 5 === 0
-//                var divBoth = i % 3 === 0 && i % 5 === 0
-////                replace("")
-//
-                console.log(str);
             }
 
-        })()
+        }
+
+        var result = fizzBuzz(100);
+
+        console.log(result);
+
     </script>
 </body>
 </html>

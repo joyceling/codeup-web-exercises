@@ -84,11 +84,18 @@ console.log(isOdd(47));
         }
 
 
-        var userTip = calculateTip(userPercentage, userTotal);
-        alert("Your tip should be " + userTip + " dollars.");
+        // var userTip = calculateTip(userPercentage, userTotal);
+        // alert("Your tip should be " + userTip + " dollars.");
 
 /**
  * TODO: use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+
+    function askForCheck(){
+        var total = prompt("Give me the total");
+        var tip = prompt("Give me the tip");
+        var tip = calculateTip(percentage, total);
+        console.log(tip);
+}
