@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passing Functions as Parameters</title>
+</head>
+<body>
+    <script>
+
+        // Exercise #1.2.1
+
+        var passengers = [ ["Thomas", "Meeks"],
+            ["Gregg", "Pollack"],
+            ["Christine", "Wong"],
+            ["Dan", "McGaw"] ];
+
+        var modifiedNames = passengers.map(
+            function (arrayCell) {
+                var string = arrayCell[0] + " " + arrayCell[1];
+                return string;
+            });
+
+        console.log(modifiedNames);
+
+//        modifiedNames.map(
+//            function (arrayCell) {
+//                alert("Yo, " + arrayCell + "!");
+//            }
+//        );
+
+        // Exercise #1.2.3
+
+        var a = function (input) {
+            var a = (3 * input) - 8;
+            return a;
+        };
+
+        var b = function (input) {
+            var b = (input + 2)*(input + 2) * (input + 2);
+            return b;
+        };
+
+        var c = function (input) {
+            var c = (input * input) - 9;
+            return c;
+        };
+
+        var d = function (input) {
+            var d = input % 4;
+            return d;
+        };
+
+        var puzzlers = [a, b, c, d];
+
+        var newPuzzlers = puzzlers.map(
+            function (fun) {
+                return fun(5);
+            }
+        );
+
+        // Exercise #1.2.3
+
+        console.log(newPuzzlers);
+
+//        var puzzlers = [
+//            function(input){},
+//            function(input){},
+//            function(input){},
+//            function(input)]{};
+//        ]
+
+
+
+
+
+
+
+        var newPuzzlers = puzzlers.map(
+            function(fun) {
+                return fun(2);
+            }
+        );
+
+    </script>
+</body>
+</html>
