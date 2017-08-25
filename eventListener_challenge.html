@@ -45,19 +45,19 @@
         var counter = 0;
         var colors = ['red','blue', 'green', 'yellow'];
         var text = document.getElementById("text");
-        var textArray = ["You won a prize!", "Are you sure you don't want your prize?", "You know you want to!!!"];
+        var textArray = ["You won a prize!", "Are you sure you don't want your prize?", "You know you want it!!!"];
 
         var divPopup = function () {
 
+                document.documentElement.style.margin = "0";
+                var body = document.getElementsByTagName("body");
+                body[0].style.margin = "0";
                 var initialDiv = document.getElementById("initial");
                 initialDiv.style.height = "400px";
                 initialDiv.style.width = "100%";
                 initialDiv.style.backgroundColor = colors[counter % colors.length];
                 initialDiv.style.zIndex = "1";
                 initialDiv.style.position = "absolute";
-                initialDiv.style.top = "10px";
-
-
 
                 if (counter === 3) {
                     clearTimeout(popupId);
