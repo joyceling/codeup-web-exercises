@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listener Challenge</title>
+</head>
+<body>
+
+
+<div id="initial" style="display:none;">
+    <div>
+        <button id="button-id" class="button">Cancel</button>
+        <form action="https://github.com/joyceling">
+            <button id="accept-prize" class="button">Accept!</button>
+        </form>
+    </div>
+    <p>
+        You won a prize!
+    </p>
+</div>
+    <h1>Welcome!</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, at, beatae consectetur cupiditate dicta dolorem dolorum eaque labore magnam maxime natus neque nisi placeat provident quibusdam reiciendis soluta sunt unde.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet aut, dignissimos dolorum explicabo fuga ipsa iusto laboriosam maiores molestiae quibusdam similique ullam vel, vitae voluptates. Fuga quae quam quos.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aspernatur commodi cum eaque, eius esse est eveniet explicabo fuga ipsa non placeat, quo rem suscipit, tenetur totam voluptas! Impedit, quos.</p>
+
+    <script>
+        var delay = 1000; // delay time in milliseconds
+        var counter = 0;
+        var colors = ['red','blue', 'green', 'yellow'];
+        var text = document.getElementById("text");
+        var textArray = ["You won a prize!", "Are you sure you don't want your prize?", "It's a LOOOOT of money!!!"];
+
+        var divPopup = function () {
+
+                var initialDiv = document.getElementById("initial");
+                initialDiv.style.height = "400px";
+                initialDiv.style.width = "100%";
+                initialDiv.style.backgroundColor = colors[counter % colors.length];
+                initialDiv.style.zIndex = "1";
+                initialDiv.style.position = "absolute";
+                initialDiv.style.top = "10px";
+                initialDiv.style.left = "5px";
+
+
+                if (counter === 3) {
+                    clearTimeout(popupId);
+                    return;
+                }
+
+                var paragraph = document.getElementsByTagName("p");
+                paragraph[0].innerHTML = textArray[counter % textArray.length];
+
+                counter++;
+
+                // make the div appear!
+                initialDiv.style.display = "display";
+
+                // enable flex-box
+                initialDiv.style.display = "flex";
+                initialDiv.style.justifyContent = "center";
+                initialDiv.style.alignItems = "center";
+                initialDiv.style.flexDirection = "column-reverse";
+
+
+                var button = document.getElementsByTagName("button");
+
+                // Format the button
+                for (var i = 0; i < button.length; i++) {
+                    button[i].style.height = "50px";
+                    button[i].style.width = "100px";
+                    button[i].style.margin = "5px";
+
+                }
+
+                paragraph[0].style.fontSize = "70px";
+                paragraph[0].style.color = "white";
+
+
+                // Create an ID for your button so you can reference in function later
+                button[0].addEventListener("click", second, false);
+
+        };
+
+        var popupId = setTimeout(divPopup, delay);
+
+        var delaytwo = 1000;
+
+        var second = function () {
+            document.getElementById("initial").style.display = "none";
+            setTimeout(divPopup, delaytwo);
+        };
+
+
+    </script>
+</body>
+</html>
