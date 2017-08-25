@@ -8,15 +8,15 @@
 
 
 <div id="initial" style="display:none;">
-    <div>
+    <div id="final">
         <button id="button-id" class="button">Cancel</button>
         <form action="https://github.com/joyceling">
             <button id="accept-prize" class="button">Accept!</button>
         </form>
+        <p>
+            You won a prize!
+        </p>
     </div>
-    <p>
-        You won a prize!
-    </p>
 </div>
     <h1>Welcome!</h1>
 
@@ -58,6 +58,11 @@
                 initialDiv.style.backgroundColor = colors[counter % colors.length];
                 initialDiv.style.zIndex = "1";
                 initialDiv.style.position = "absolute";
+
+                var finalDiv = document.getElementById("final");
+                finalDiv.style.display = "flex";
+                finalDiv.style.flexDirection = "column-reverse";
+                finalDiv.style.alignItems = "center";
 
                 if (counter === 3) {
                     clearTimeout(popupId);
