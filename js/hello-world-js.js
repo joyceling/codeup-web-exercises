@@ -3,6 +3,8 @@
 /*
  * How many times a lucky number is repeated for every 100 customers?
  */
+
+// each time a specific number is chosen by the randomizer,
 var luckyNumber;
 var i = 1;
 var j = 0;
@@ -12,11 +14,9 @@ var m = 0;
 var n = 0;
 var o = 0;
 
-
+console.log("This is my method: ");
 while (i <= 100) {
     luckyNumber = Math.floor(Math.random() * 6);
-    console.log(i + ": " + luckyNumber);
-
 
     if (luckyNumber === 0) {
         j++;
@@ -51,6 +51,31 @@ console.log("2 appeared " + l + " times");
 console.log("3 appeared " + m + " times");
 console.log("4 appeared " + n + " times");
 console.log("5 appeared " + o + " times");
+
+
+// A different method
+console.log("---- ---- ---- ----");
+console.log("This is T-Payne's method:");
+
+function luckyNumberStats() {
+    var luckyNumber;
+    var numberArray = new Array(6).fill(0);
+
+    for (var i = 0; i < 100; i++) {
+        luckyNumber = Math.floor(Math.random() * 6);
+        numberArray[luckyNumber]++;
+    }
+
+    for (i = 0; i < numberArray.length; i++) {
+        console.log(`${i} appeared ${numberArray[i]} number of times`);
+        console.log(i + " appeared " + numberArray[i] + " times");
+    }
+
+}
+
+luckyNumberStats();
+
+
 
 
 // } else if (luckyNumber === 1) {

@@ -3,7 +3,7 @@ var forLoops = 'for-loops exercise:';
 console.log(forLoops.toUpperCase());
 
 // TIMES TABLES
-console.log("This is the times table exercise...")
+console.log("This is the times table exercise...");
 
 var timesNumber = prompt("Choose a number between 1 and 10.");
 
