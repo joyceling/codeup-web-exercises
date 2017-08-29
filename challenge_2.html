@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 2</title>
+</head>
+<body>
+    <script>
+
+        var dnaComplement = function (dnaString) {
+
+            var splitDNA = dnaString.split("");
+            console.log(splitDNA);
+
+
+            var newArray = [];
+
+            var complementaryDNA = splitDNA.map(function (base) {
+
+               if (base === "A") {
+                    newArray.push ("T")
+                } else if (base === "T") {
+                    newArray.push ("A")
+                } else if (base === "G") {
+                    newArray.push ("C")
+                } else if (base === "C") {
+                    newArray.push ("G")
+                }
+
+           });
+
+            console.log(newArray);
+            newArray = newArray.join("");
+            console.log(newArray);
+
+        };
+
+
+
+        dnaComplement("GATACA");
+
+    </script>
+</body>
+</html>
