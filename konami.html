@@ -10,7 +10,7 @@
 <div id = "header">
     <h1>Crack the Konami code!</h1>
 
-    <p>Use your arrow keys and the letters of the alphabet. <br> Press the ENTER key when all your boxes are green.
+    <p>Use your arrow keys and the letters of the alphabet. <br> Press the ENTER key to reset.
     </p>
 </div>
     <div class="row">
@@ -36,20 +36,22 @@
 <script>
     var row = $(".row");
     var input = $(".input");
+    var $document = $(document);
     var header = $("#header");
     var body = $("body");
     var array = ["←", "↑", "→", "↓", "a", "b", "enter"];
+    var arraySequence = ["↑", "↑", "↓", "↓", "←", "→", "←", "→", "a", "b"];
     var savedVariable = "";
-    var one = $("#1");
-    var two = $("#2");
-    var three = $("#3");
-    var four = $("#4");
-    var five = $("#5");
-    var six = $("#6");
-    var seven = $("#7");
-    var eight = $("#8");
-    var nine = $("#9");
-    var ten = $("#10");
+    var one = $("#one");
+    var two = $("#two");
+    var three = $("#three");
+    var four = $("#four");
+    var five = $("#five");
+    var six = $("#six");
+    var seven = $("#seven");
+    var eight = $("#eight");
+    var nine = $("#nine");
+    var ten = $("#ten");
     var boxArray = [one, two, three, four, five, six, seven, eight, nine, ten];
 
 
@@ -63,7 +65,7 @@
         "text-align" : "center",
         "margin" : "15px",
         "margin-bottom" : "40px",
-        "border" : "1px solid grey",
+        "border" : "none",
         "border-radius" : "20px"
 
     });
@@ -80,24 +82,63 @@
         "justify-content" : "center",
         "align-items" : "center",
         "position" : "relative",
-        "top" : "250px"
+        "top" : "150px"
     });
 
     // Add header styling
     header.css({
         "text-align" : "center",
         "position" : "relative",
-        "top" : "235px",
+        "top" : "100px",
         "color": "white",
         "font-family" : "'VT323', monospace",
         "font-size" : "30px"
     });
 
 
+
+
+    var reset = function() {
+        for (k = 0; k < 10; k++) {
+            boxArray[k].attr("placeholder", k+1);
+            boxArray[k].val("");
+            boxArray[k].css({
+                "background-color" : "white",
+                "border" : "none"
+            });
+        }
+
+        k = 0;
+    };
+
+
+    var finishReset = function () {
+
+        console.log(one.css("background-color"));
+        if (one.css("background-color") === "rgb(0, 128, 0)" &&
+            two.css("background-color") === "rgb(0, 128, 0)" &&
+            three.css("background-color") === "rgb(0, 128, 0)" &&
+            four.css("background-color") === "rgb(0, 128, 0)" &&
+            five.css("background-color") === "rgb(0, 128, 0)" &&
+            six.css("background-color") === "rgb(0, 128, 0)" &&
+            seven.css("background-color") === "rgb(0, 128, 0)" &&
+            eight.css("background-color") === "rgb(0, 128, 0)" &&
+            nine.css("background-color") === "rgb(0, 128, 0)" &&
+            ten.css("background-color") === "rgb(0, 128, 0)") {
+
+            alert("Congratulations! You win and get 30 lives!")
+
+        } else {
+
+            reset();
+
+        }
+    };
+
+    var k = 0;
+
     var pressAKey = function (key) {
         console.log(key.keyCode);
-        var k = 0;
-
 //        for (var i = 1; i <= 10; i++) {
             switch (key.keyCode) {
                 // Arrow keys (left, up, right, down)
@@ -117,6 +158,17 @@
                     savedVariable = array[3];
                     boxArray[k].val(savedVariable);
                     break;
+                case 65:
+                    savedVariable = array[4];
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 66:
+                    savedVariable = array[5];
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 13 :
+                    finishReset();
+                    return;
             }
 
 
@@ -125,152 +177,151 @@
 
         // if-else statements to check for accuracy
 
-        // BOX ONE
-        if (one.val() === array[1]) {
-                one.css({
+        if (boxArray[k].val() === arraySequence[k]) {
+                boxArray[k].css({
                     "background-color": "green"
                 });
-                two.val("");
+                k++;
         } else {
-                one.css({
-                    "background-color": "red",
-                    "border": "1 px solid red"
+                boxArray[k].css({
+                    "background-color": "red"
                 });
         }
 
 
-        // BOX TWO
-        if (two.val() === array[1] || "") {
-            two.css({
-                "background-color": "green",
-            });
-        } else {
-            two.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
+          // BOX ONE
+//        // BOX TWO
+//        if (boxArray[k].val === array[1]) {
+//            two.css({
+//                "background-color": "green"
+//            });
+//            return;
+//        } else {
+//            two.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//            return;
+//        }
+//
+//
+//        // BOX THREE
+//        if (boxArray[k].val === array[3]) {
+//            three.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            three.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//        // BOX FOUR
+//        if (boxArray[k].val === array[3]) {
+//            four.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            four.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX FIVE
+//        if (boxArray[k].val=== array[0]) {
+//            five.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            five.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX SIX
+//        if (boxArray[k].val === array[2]) {
+//            six.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            six.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX SEVEN
+//        if (boxArray[k].val === array[0]) {
+//            seven.css({
+//                "background-color": "green",
+//            });
+//        } else {
+//            seven.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX EIGHT
+//        if (boxArray[k].val === array[2]) {
+//            eight.css({
+//                "background-color": "green",
+//            });
+//        } else {
+//            eight.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX NINE
+//        if (boxArray[k].val === array[4]) {
+//            nine.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            nine.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
+//
+//
+//        // BOX TEN
+//        if (boxArray[k].val === array[5]) {
+//            ten.css({
+//                "background-color": "green"
+//            });
+//        } else {
+//            ten.css({
+//                "background-color": "red",
+//                "border": "1px solid red"
+//            });
+//        }
 
 
-        // BOX THREE
-        if (three.val() === array[3]) {
-            three.css({
-                "background-color": "green",
-            });
-        } else {
-            three.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
+//
+//        {one.css({
+//            "background-color": "red",
+//            "border": "1px solid red"
+//        });
+            return;
+//        }
 
-        // BOX FOUR
-        if (four.val() === array[3]) {
-            four.css({
-                "background-color": "green",
-            });
-        } else {
-            four.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
+        ;
 
 
-        // BOX FIVE
-        if (five.val() === array[0]) {
-            five.css({
-                "background-color": "green",
-            });
-        } else {
-            five.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-
-        // BOX SIX
-        if (six.val() === array[2]) {
-            six.css({
-                "background-color": "green",
-            });
-        } else {
-            six.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-
-        // BOX SEVEN
-        if (seven.val() === array[0]) {
-            seven.css({
-                "background-color": "green",
-            });
-        } else {
-            seven.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-
-        // BOX EIGHT
-        if (eight.val() === array[2]) {
-            eight.css({
-                "background-color": "green",
-            });
-        } else {
-            eight.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-
-        // BOX NINE
-        if (nine.val() === array[5]) {
-            nine.css({
-                "background-color": "green",
-            });
-        } else {
-            nine.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-
-        // BOX TEN
-        if (ten.val() === array[4]) {
-            ten.css({
-                "background-color": "green",
-            });
-        } else {
-            ten.css({
-                "background-color": "red",
-                "border": "1 px solid red"
-            });
-        }
-
-        if (one.css.backgroundColor === "green" &&
-            two.css.backgroundColor === "green" &&
-            three.css.backgroundColor === "green" &&
-            four.css.backgroundColor === "green" &&
-            five.css.backgroundColor === "green" &&
-            six.css.backgroundColor === "green" &&
-            seven.css.backgroundColor === "green" &&
-            eight.css.backgroundColor === "green" &&
-            nine.css.backgroundColor === "green" &&
-            ten.css.backgroundColor === "green") {
-                alert("Congratulations! You win and get 30 lives!")
-        };
-
-        k++;
     };
 
-    input.keydown(pressAKey);
+    $document.keydown(pressAKey);
 
 
 
