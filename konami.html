@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+
+<div id = "header">
+    <h1>Try to crack the Konami code!</h1>
+
+    <p>Use your arrow keys and the letters of the alphabet. Press the ENTER key when you're confident in your answer.
+    </p>
+</div>
+    <div class="row">
+        <input type="text" class="input" id = "one" placeholder="1" maxlength="1">
+        <input type="text" class="input" id = "two" placeholder="2" maxlength="1">
+        <input type="text" class="input" id = "three" placeholder="3" maxlength="1">
+        <input type="text" class="input" id = "four" placeholder="4" maxlength="1">
+        <input type="text" class="input" id = "five" placeholder="5" maxlength="1">
+    </div>
+    <div class="row">
+        <input type="text" class="input" id = "six" placeholder="6" maxlength="1">
+        <input type="text" class="input" id = "seven" placeholder="7" maxlength="1">
+        <input type="text" class="input" id = "eight" placeholder="8" maxlength="1">
+        <input type="text" class="input" id = "nine" placeholder="9" maxlength="1">
+        <input type="text" class="input" id = "ten" placeholder="10" maxlength="1">
+    </div>
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous">
+
+</script>
+<script>
+    var row = $(".row");
+    var input = $(".input");
+    var header = $("#header");
+    var body = $("body");
+    var array = ["←", "↑", "→", "↓", "a", "b", "enter"];
+    var savedVariable = "";
+    var one = $("#1");
+    var two = $("#2");
+    var three = $("#3");
+    var four = $("#4");
+    var five = $("#5");
+    var six = $("#6");
+    var seven = $("#7");
+    var eight = $("#8");
+    var nine = $("#9");
+    var ten = $("#10");
+    var boxArray = [one, two, three, four, five, six, seven, eight, nine, ten];
+
+
+
+    // Change the styling of text box
+    input.css({
+        "height" : "120px" ,
+        "width" : "10%",
+        "min-width": "120px",
+        "font-size" : "100px",
+        "text-align" : "center",
+        "margin" : "15px",
+        "margin-bottom" : "40px",
+        "border" : "1px solid grey",
+        "border-radius" : "20px"
+
+    });
+
+    // Add body styling
+    body.css({
+
+    });
+
+    // Add row styling
+    row.css({
+        "width": "100%",
+        "display" : "flex",
+        "justify-content" : "center",
+        "align-items" : "center",
+        "position" : "relative",
+        "top" : "250px"
+    });
+
+    // Add header styling
+    header.css({
+        "text-align" : "center",
+        "position" : "relative",
+        "top" : "200px"
+    });
+
+
+    var pressAKey = function (key) {
+        console.log(key.keyCode);
+        var k = 0;
+
+//        for (var i = 1; i <= 10; i++) {
+            switch (key.keyCode) {
+                // Arrow keys (left, up, right, down)
+                case 37:
+                    savedVariable = array[0];
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 38:
+                    savedVariable = array[1];
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 39:
+                    savedVariable = array[2];
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 40:
+                    savedVariable = array[3];
+                    boxArray[k].val(savedVariable);
+                    break;
+            }
+
+
+//        }
+
+
+        // if-else statements to check for accuracy
+
+        // BOX ONE
+        if (one.val() === array[1]) {
+                one.css({
+                    "background-color": "green"
+                });
+                two.val("");
+        } else {
+                one.css({
+                    "background-color": "red",
+                    "border": "1 px solid red"
+                });
+        }
+
+
+        // BOX TWO
+        if (two.val() === array[1] || "") {
+            two.css({
+                "background-color": "green",
+            });
+        } else {
+            two.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX THREE
+        if (three.val() === array[3]) {
+            three.css({
+                "background-color": "green",
+            });
+        } else {
+            three.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+        // BOX FOUR
+        if (four.val() === array[3]) {
+            four.css({
+                "background-color": "green",
+            });
+        } else {
+            four.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX FIVE
+        if (five.val() === array[0]) {
+            five.css({
+                "background-color": "green",
+            });
+        } else {
+            five.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX SIX
+        if (six.val() === array[2]) {
+            six.css({
+                "background-color": "green",
+            });
+        } else {
+            six.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX SEVEN
+        if (seven.val() === array[0]) {
+            seven.css({
+                "background-color": "green",
+            });
+        } else {
+            seven.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX EIGHT
+        if (eight.val() === array[2]) {
+            eight.css({
+                "background-color": "green",
+            });
+        } else {
+            eight.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX NINE
+        if (nine.val() === array[5]) {
+            nine.css({
+                "background-color": "green",
+            });
+        } else {
+            nine.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+
+        // BOX TEN
+        if (ten.val() === array[4]) {
+            ten.css({
+                "background-color": "green",
+            });
+        } else {
+            ten.css({
+                "background-color": "red",
+                "border": "1 px solid red"
+            });
+        }
+
+        if (one.css.backgroundColor === "green" &&
+            two.css.backgroundColor === "green" &&
+            three.css.backgroundColor === "green" &&
+            four.css.backgroundColor === "green" &&
+            five.css.backgroundColor === "green" &&
+            six.css.backgroundColor === "green" &&
+            seven.css.backgroundColor === "green" &&
+            eight.css.backgroundColor === "green" &&
+            nine.css.backgroundColor === "green" &&
+            ten.css.backgroundColor === "green") {
+                alert("Congratulations! You win and get 30 lives!")
+        };
+
+        k++;
+    };
+
+    input.keydown(pressAKey);
+
+
+
+
+</script>
+</body>
+</html>
