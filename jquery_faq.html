@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button id="visibilityToggle" href="showAnswers">Click to open</button>
+    <dl>
+        <dt>FAQ #1</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab autem dicta distinctio odio quisquam similique? Aliquid aspernatur, beatae consequuntur eos magnam minus mollitia optio quaerat quos reprehenderit suscipit, vel.
+        </dd>
+        <dt>FAQ #2</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, architecto assumenda aut consectetur dicta doloribus ea, eos est eveniet explicabo ipsum laudantium nemo numquam officiis sapiente sed sit vero voluptates!
+        </dd>
+        <dt>FAQ #3</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cum cumque dolorum eaque eius facilis id incidunt inventore ipsam natus non nostrum nulla pariatur quia quod recusandae similique tempore, velit.
+        </dd>
+        <dt>FAQ #4</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores atque blanditiis distinctio doloribus ex fugit harum illo impedit, in, ipsa magni minima quam quas quod sint sit sunt veniam?
+        </dd>
+        <dt>FAQ #5</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolor et ipsa obcaecati quasi! Accusamus adipisci amet, animi blanditiis deleniti dolorem doloribus eius enim laboriosam molestiae reiciendis sapiente tenetur unde!
+        </dd>
+        <dt>FAQ #6</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa doloremque doloribus ea est harum laboriosam neque officiis placeat quod. Architecto consequuntur facere fugiat laborum non quas quisquam, unde voluptate.
+        </dd>
+        <dt>FAQ #7</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A blanditiis cumque distinctio dolorem eaque eveniet explicabo in inventore ipsa ipsam neque, nesciunt, non ratione reiciendis repellat sit, veritatis. Similique, unde.
+        </dd>
+        <dt>FAQ #8</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et fugiat libero? Aliquam commodi dicta enim iure molestiae unde voluptates? Architecto dolorem doloremque explicabo laboriosam numquam quibusdam soluta tenetur voluptatum.
+        </dd>
+        <dt>FAQ #9</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae est eum excepturi exercitationem fugiat fugit incidunt ipsam maiores quam reiciendis sit, tenetur. Ab explicabo fuga, maiores natus quibusdam velit?
+        </dd>
+        <dt>FAQ #10</dt>
+        <dd class = "invisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, cum eligendi error illum in iusto neque odit officia officiis, quidem quis quo repellat reprehenderit sapiente sit totam, ullam voluptas.
+        </dd>
+    </dl>
+
+
+
+
+    <script src="jquery-2.2.4.min.js"></script>
+
+    <script>
+        "use strict";
+
+        $("#visibilityToggle").click(function() {
+            $("dd").toggleClass("invisible");
+        });
+
+    </script>
+</body>
+</html>
