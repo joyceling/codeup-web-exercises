@@ -13,8 +13,12 @@
 </head>
 <body>
 <div id="newsletter">
-    <span id="exit">X</span>
+    <span class="exit">X</span>
     <h1>Would you like to sign up for our newsletter?</h1>
+</div>
+<div id="register">
+    <span class="exit">X</span>
+    <h2>Register here!</h2>
 </div>
 <button id="visibilityToggle" href="showAnswers">Click to open</button>
     <dl>
@@ -82,6 +86,15 @@
     <script>
         "use strict";
 
+        // after 8 seconds, a h2 fades in that asks user to register
+        var delay = 8000;
+        var register = (function () {
+            $("#register").fadeIn();
+        });
+        setTimeout(register, delay);
+
+
+
         // when you click the button, it toggles invisible or visible class
         $("#visibilityToggle").click(function() {
             $("dd").toggleClass("invisible");
@@ -107,11 +120,27 @@
         });
 
         // When you click the X, the div disappears
-        $("#exit").click(function(){
+        $(".exit").click(function(){
             $("#newsletter").hide();
         });
 
+        // When you click the h3, the corresponding ul appears
+        $("h3").click(function(){
+            $(this).next().slideToggle();
+        });
+
+
         // styling
+        $("ul").css("display", "none");
+        $("#register").css({
+            "display": "none",
+            "border" : "1px solid red",
+            "margin" : "10px",
+            "padding" : "5px",
+            "text-align" : "center",
+            "margin-bottom" : "20px"
+        });
+
         $("#newsletter").css({
             "border" : "1px solid red",
             "margin" : "10px",
@@ -122,6 +151,7 @@
 
         $("#exit").css({
            "float" : "right",
+            "display" : "block",
             "font-weight" : "bold",
             "color" : "red"
         });
