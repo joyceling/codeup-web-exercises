@@ -12,6 +12,10 @@
     </style>
 </head>
 <body>
+<div id="newsletter">
+    <span id="exit">X</span>
+    <h1>Would you like to sign up for our newsletter?</h1>
+</div>
 <button id="visibilityToggle" href="showAnswers">Click to open</button>
     <dl>
         <dt>FAQ #1</dt>
@@ -78,14 +82,12 @@
     <script>
         "use strict";
 
+        // when you click the button, it toggles invisible or visible class
         $("#visibilityToggle").click(function() {
             $("dd").toggleClass("invisible");
         });
 
-
-        var $li = $("ul").html();
-        console.log($li);
-
+        // When you press the button, it highlights the last li
         $("#highlight-last").click(function() {
             $("ul").each(function (index, element) {
                // this -> chldren -> last
@@ -94,16 +96,35 @@
 
         });
 
+        // When you click h3, all children become bolded
         $("h3").click(function() {
             $(this).next().children().css("font-weight", "bold");
         });
 
+        // When you click on an li, the first li becomes blue
         $("li").click(function() {
             $(this).parent().children().first().css("color", "blue");
         });
 
+        // When you click the X, the div disappears
+        $("#exit").click(function(){
+            $("#newsletter").hide();
+        });
 
+        // styling
+        $("#newsletter").css({
+            "border" : "1px solid red",
+            "margin" : "10px",
+            "padding" : "5px",
+            "text-align" : "center",
+            "margin-bottom" : "20px"
+        });
 
+        $("#exit").css({
+           "float" : "right",
+            "font-weight" : "bold",
+            "color" : "red"
+        });
 
     </script>
 </body>
