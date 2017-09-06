@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+    <link href="normalize.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <style>
+        textarea {
+        width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding: 5px;
+        }
+
+        textarea.form-control {
+            height: 250px;
+            margin-bottom: 15px;
+        }
+
+        /*textarea.form-control, .tags {*/
+            /*display: none;*/
+        /*}*/
+
+        h1, p {
+            text-align: center;
+        }
+
+        p {
+            color: white;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        h1:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            background-color: #e45957;
+            color: #cdcdcd;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            border: 5px solid white;
+            display: block;
+            margin: 50px auto;
+
+        }
+    </style>
+</head>
+<body>
+    <img src="img/JoyceLing4.jpg">
+    <p>Click below to begin reading!</p>
+    <div id="posts">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+        $.ajax("data/blog.json").done(function(data) {
+            var posts = "";
+
+            data.forEach(function(element) {
+            posts =
+                "<h1>" + element.title + "</h1>" +
+                "<p>" + element.date +"</p>" +
+                "<textarea>" + element.content + "</textarea>" +
+                "<p><b>" + "Tags: " + "</b>" +
+                (element.categories).join(", ") + "</p>" +
+                posts
+            });
+
+            $("#posts").html(posts);
+            $("textarea").addClass("form-control");
+            $("h1").next().hide();
+            $("h1").next().next().hide();
+            $("h1").next().next().next().hide();
+
+            $("h1").click(function() {
+                $(this).next().slideToggle();
+                $(this).next().next().slideToggle();
+                $("h1").next().next().next().slideToggle();
+            });
+        });
+
+    </script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
