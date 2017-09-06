@@ -13,18 +13,52 @@
     <p>Use your arrow keys and the letters of the alphabet. <br> Press the ENTER key to reset.
     </p>
 
-    <h3>You just lost a life!</h3>
+    <h3 id="life-lost">You just lost a life!</h3>
+    <h3 id="out-of-lives">Game over. Refresh page to try again.</h3>
+    <h3 id="you-win">YOU WIN!</h3>
+    <h3 id="add-30-lives">+30 lives</h3>
     <div class="lives">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
-        <img src="img/heart-transparent.png" class="heart">
+        <img src="img/heart-transparent.png" class="heart" id="1">
+        <img src="img/heart-transparent.png" class="heart" id="2">
+        <img src="img/heart-transparent.png" class="heart" id="3">
+        <img src="img/heart-transparent.png" class="heart" id="4">
+        <img src="img/heart-transparent.png" class="heart" id="5">
+        <img src="img/heart-transparent.png" class="heart" id="6">
+        <img src="img/heart-transparent.png" class="heart" id="7">
+        <img src="img/heart-transparent.png" class="heart" id="8">
+        <img src="img/heart-transparent.png" class="heart" id="9">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+        <img src="img/heart-transparent.png" class="heart hidden-heart">
+
     </div>
 
 </div>
@@ -58,7 +92,7 @@
     var lives = $(".lives");
     var body = $("body");
     var array = ["←", "↑", "→", "↓", "a", "b", "enter"];
-    var arraySequence = ["↑", "↑", "↓", "↓", "←", "→", "←", "→", "a", "b"];
+    var arraySequence = ["↑", "↑", "↓", "↓", "←", "→", "←", "→", "b", "a"];
     var savedVariable = "";
     var one = $("#one");
     var two = $("#two");
@@ -71,7 +105,12 @@
     var nine = $("#nine");
     var ten = $("#ten");
     var boxArray = [one, two, three, four, five, six, seven, eight, nine, ten];
-
+    var lifeLost = $("#life-lost");
+    var j = 1;
+    var outofLives = $("#out-of-lives");
+    var youWin = $("#you-win");
+    var addThirty = $("#add-30-lives");
+    var hiddenHeart = $(".hidden-heart");
 
 
     // Change the styling of text box
@@ -107,23 +146,25 @@
     header.css({
         "text-align" : "center",
         "position" : "relative",
-        "top" : "100px",
+        "top" : "80px",
         "color": "white",
         "font-family" : "'VT323', monospace",
-        "font-size" : "25px"
+        "font-size" : "30px"
     });
 
     // Add lives styling
     heart.css({
         "height" : "50px",
         "width" : "50px"
-
-
     });
+
 
     lives.css ({
         "display" : "flex",
-        "justify-content" : "center"
+        "justify-content" : "center",
+        "flex-wrap" : "wrap",
+        "max-width" : "700px",
+        "margin" : "0 auto"
     });
 
     h3.css ({
@@ -131,9 +172,26 @@
         "display" : "none"
     });
 
+    lifeLost.css ({
+        "color": "#C5302C"
+    });
+
+    outofLives.css ({
+       "color" : "#C5302C",
+        "font-size" : "40px"
+    });
+
+    youWin.css ({
+        "color" : "green"
+    });
+
+    hiddenHeart.css ({
+        "display" : "none"
+    });
+
     var reset = function() {
         for (k = 0; k < 10; k++) {
-            boxArray[k].attr("placeholder", k+1);
+            boxArray[k].attr("placeholder", k + 1);
             boxArray[k].val("");
             boxArray[k].css({
                 "background-color" : "white",
@@ -144,6 +202,18 @@
         k = 0;
     };
 
+    var loseAlife = function () {
+        if (j < 10) {
+            lifeLost.fadeIn(800);
+            lifeLost.fadeOut();
+            $("#" + j).fadeOut();
+            j++;
+        } else {
+            outofLives.fadeIn(500);
+            $("#10").fadeOut();
+        }
+
+    };
 
     var finishReset = function () {
 
@@ -159,12 +229,13 @@
             nine.css("background-color") === "rgb(0, 128, 0)" &&
             ten.css("background-color") === "rgb(0, 128, 0)") {
 
-            alert("Congratulations! You win and get 30 lives!")
+            youWin.fadeIn(800);
+            addThirty.fadeIn(800);
+            hiddenHeart.fadeIn(6000);
 
         } else {
-
             reset();
-
+            loseAlife();
         }
     };
 
@@ -203,9 +274,6 @@
                     finishReset();
                     return;
             }
-
-
-//        }
 
 
         // if-else statements to check for accuracy
