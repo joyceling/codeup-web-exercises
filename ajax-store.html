@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        td {
+            background-color: #686682;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+<div class="table-responsive">
+    <table id="products" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody id="insertProducts" class="table-hover"></tbody>
+    </table>
+</div>
+<div class ="buttonDiv">
+    <button id="refresh" class="btn btn-default">Refresh</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+        $.ajax("data/inventory.json");
+
+    // TODO: Take the data from inventory.json and append it to the products table
+
+    function refreshStore () {
+        $.ajax("data/inventory.json").done(function (data, status, jqXhr) {
+            var toolTable = "";
+
+            data.forEach(function (element) {
+
+                toolTable =
+                    "<tr><td>" +
+                    element.title + "</td><td>" +
+                    element.quantity + "</td><td>" +
+                    element.price + "</td><td>" +
+                    (element.categories) + "</td></tr>" +
+                    toolTable;
+            });
+
+            $("#insertProducts").html(toolTable);
+
+        });
+
+    }
+
+    refreshStore();
+    $("#refresh").click(refreshStore);
+
+    // styling
+    $("body").css("background-color", "#d6cbcb");
+    $("h1").css({
+        "text-align" : "center",
+        "color" : "#504f52"
+    });
+    $(".buttonDiv").css({
+        "text-align" : "center"
+    })
+    $("th").css("background-color", "white");
+    $("td").css("background-color", "white");
+    $(".table-responsive").css("margin", "20px");
+
+
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+})();
+</script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+</body>
+</html>
