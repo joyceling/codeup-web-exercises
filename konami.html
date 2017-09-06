@@ -10,13 +10,14 @@
 <div id = "header">
     <h1>Crack the Konami code!</h1>
 
-    <p>Use your arrow keys and the letters of the alphabet. <br> Press the ENTER key to reset.
+    <p>Use your arrow keys and the letters of the alphabet. <br> Press the ENTER key when you  have entered your answer in the squares below.
     </p>
 
     <h3 id="life-lost">You just lost a life!</h3>
     <h3 id="out-of-lives">Game over. Refresh page to try again.</h3>
     <h3 id="you-win">YOU WIN!</h3>
     <h3 id="add-30-lives">+30 lives</h3>
+    <h3 id = "cannot-press">That is not a valid key to press.</h3>
     <div class="lives">
         <img src="img/heart-transparent.png" class="heart" id="1">
         <img src="img/heart-transparent.png" class="heart" id="2">
@@ -63,18 +64,18 @@
 
 </div>
     <div class="row">
-        <input type="text" class="input" id = "one" placeholder="1" maxlength="1">
-        <input type="text" class="input" id = "two" placeholder="2" maxlength="1">
-        <input type="text" class="input" id = "three" placeholder="3" maxlength="1">
-        <input type="text" class="input" id = "four" placeholder="4" maxlength="1">
-        <input type="text" class="input" id = "five" placeholder="5" maxlength="1">
+        <input type="text" class="input" id = "one" placeholder="1" maxlength="1" readonly>
+        <input type="text" class="input" id = "two" placeholder="2" maxlength="1" readonly>
+        <input type="text" class="input" id = "three" placeholder="3" maxlength="1" readonly>
+        <input type="text" class="input" id = "four" placeholder="4" maxlength="1" readonly>
+        <input type="text" class="input" id = "five" placeholder="5" maxlength="1" readonly>
     </div>
     <div class="row">
-        <input type="text" class="input" id = "six" placeholder="6" maxlength="1">
-        <input type="text" class="input" id = "seven" placeholder="7" maxlength="1">
-        <input type="text" class="input" id = "eight" placeholder="8" maxlength="1">
-        <input type="text" class="input" id = "nine" placeholder="9" maxlength="1">
-        <input type="text" class="input" id = "ten" placeholder="10" maxlength="1">
+        <input type="text" class="input" id = "six" placeholder="6" maxlength="1" readonly>
+        <input type="text" class="input" id = "seven" placeholder="7" maxlength="1" readonly>
+        <input type="text" class="input" id = "eight" placeholder="8" maxlength="1" readonly>
+        <input type="text" class="input" id = "nine" placeholder="9" maxlength="1" readonly>
+        <input type="text" class="input" id = "ten" placeholder="10" maxlength="1" readonly>
     </div>
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -111,6 +112,7 @@
     var youWin = $("#you-win");
     var addThirty = $("#add-30-lives");
     var hiddenHeart = $(".hidden-heart");
+    var cannotPress = $("#cannot-press");
 
 
     // Change the styling of text box
@@ -187,6 +189,11 @@
 
     hiddenHeart.css ({
         "display" : "none"
+    });
+
+    cannotPress.css ({
+        "display" : "none",
+        "color" : "red"
     });
 
     var reset = function() {
@@ -273,6 +280,107 @@
                 case 13 :
                     finishReset();
                     return;
+                // the rest of the alphabet
+                case 67 :
+                    savedVariable = "c";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 68 :
+                    savedVariable = "d";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 69 :
+                    savedVariable = "e";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 70 :
+                    savedVariable = "f";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 71 :
+                    savedVariable = "g";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 72 :
+                    savedVariable = "h";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 73 :
+                    savedVariable = "i";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 74 :
+                    savedVariable = "j";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 75 :
+                    savedVariable = "k";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 76 :
+                    savedVariable = "l";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 77 :
+                    savedVariable = "m";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 78 :
+                    savedVariable = "n";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 79 :
+                    savedVariable = "o";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 80 :
+                    savedVariable = "p";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 81 :
+                    savedVariable = "q";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 82 :
+                    savedVariable = "r";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 83 :
+                    savedVariable = "s";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 84 :
+                    savedVariable = "t";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 85 :
+                    savedVariable = "u";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 86 :
+                    savedVariable = "v";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 87 :
+                    savedVariable = "w";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 88 :
+                    savedVariable = "x";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 89 :
+                    savedVariable = "y";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 90 :
+                    savedVariable = "z";
+                    boxArray[k].val(savedVariable);
+                    break;
+                case 32 :
+                    cannotPress.fadeIn().fadeOut();
+                    return;
+
             }
 
 
