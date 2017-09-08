@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 3</title>
+</head>
+<body>
+    <script>
+        // ------------ //
+        // CHALLENGE #1 //
+        // ------------ //
+
+
+        //console.log(findTarget([], 7)); //false
+
+        //console.log(findTarget([3], 7)); // false
+        //console.log(findTarget([7], 7)); // true
+
+        //console.log(findTarget([4, 6], 7)); // false
+        //console.log(findTarget([3, 4], 7)); // true
+        //console.log(findTarget([2, 5, 6, 8, 12], 7)); // true
+        //console.log(findTarget([3, 20, 5, 6, 18], 7)); // false
+        console.log(findTarget([19, 3, 5, 4, 18], 7)); // true
+
+
+        function findTarget(haystack, needle) {
+            if (haystack.length === 0) return [];
+
+            if (haystack.length === 1 && haystack[0] === needle)
+                return [0];
+
+            if (haystack.length === 2 && haystack[0] + haystack[1] === needle)
+                return [0, 1];
+
+            var i = 0, j, sum;
+
+            while (i < haystack.length - 1) { // 0 3
+                j = i + 1;  // 1
+                while (j < haystack.length) { // 2
+                    sum = haystack[i] + haystack[j];
+                    if (sum === needle) return [i, j];
+                    j++;
+                }
+                i++;
+            }
+
+            return [];
+
+        }
+
+
+        var nums = [2,7,5,10];
+        var target = 15;
+        var newArray = [];
+
+        var doesItAddUp = function (nums, target) {
+            nums.forEach(function (number) {
+                if (number <= target) {
+                    return newArray.push(number);
+                }
+            });
+            var sum = newArray.reduce(function getSum(total, num) {return total + num});
+            console.log(sum);
+
+            nums.forEach(function (number, index) {
+                if (number < target) {
+                    console.log(index);
+                }
+            });
+
+
+        };
+
+        doesItAddUp(nums, target);
+
+
+
+        // ------------ //
+        // CHALLENGE #2 //
+        // ------------ //
+
+        var giveRomanNumeral = function (num) {
+            if (num > 1000) {
+                var roman = Math.floor(num/1000);
+
+            }
+
+
+            if (num % 1 === 0) {
+                roman = (num/1);
+                var answer = "";
+
+                for (var i = 0; i < roman; i++) {
+                    answer = "I" + answer;
+                }
+                console.log(answer)
+            }
+
+            if (num % 10 === 0 & num < 31) {
+                roman = (num/10);
+                var answer = "";
+                for (var i = 0; i < roman; i++) {
+                    answer = "X" + answer;
+                }
+                console.log(answer);
+            }
+
+            if (num % 5 === 0) {
+
+            }
+        };
+
+        // ------------ //
+        // CHALLENGE #3 //
+        // ------------ //
+
+        // empty string
+        console.log(wellFormed("")); // "", length = 0
+
+//        // less than 2
+        console.log(wellFormed("(")); // "", length = 0
+//
+//        // p. that don't match
+        console.log(wellFormed(")(")); // "" , length = 0
+//
+//        // p. that do match (index 0)
+        console.log(wellFormed("()")); // "()", length = 2
+//
+//        // p. that match (not index 0)
+        console.log(wellFormed("(()")); // "()", length = 2
+//
+//        // p. that match (more than one)
+        console.log(wellFormed("(()())")); // "()()", length = 4
+
+        // p. that match (more than one) that are not consecutive
+        console.log(wellFormed("()(()))))")); // "()(())", length = 6
+
+
+        function wellFormed (str) {
+            var lengthOfParen = 0;
+            var paren = "";
+            var strArray = str.split("");
+
+            if (strArray.length < 2) {
+                return "'', length = 0.";
+
+            }
+
+            if (strArray.length >= 2 &&  strArray.length < 4 && strArray[0] === "(" && strArray[1] === ")") {
+                return "(), length = 2."
+            }
+
+            else {
+
+                for (var i = 0; i < strArray.length; i++) {
+                    if (strArray[i] === "(" && strArray[i + 1] === ")") {
+                        lengthOfParen = lengthOfParen + 2;
+                        paren = paren + "()";
+                        var message = paren + ", length = " + lengthOfParen;
+                    }
+                }
+
+            }
+            return message;
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
