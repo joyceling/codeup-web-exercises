@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises with AJAX calls</title>
+</head>
+<body>
+    <script>
+
+    </script>
+    <script>
+        let getGithubUsers = new Promise(function(resolve, reject) {
+            let request = $.ajax("https://api.github.com/users");
+
+            request.done(function(users) {
+                console.log(users)
+            });
+            request.fail(function () {
+                console.error("Something went wrong");
+            });
+
+        });
+
+        getGithubUsers
+            .then(function (users){
+                console.log(users)
+            })
+            .catch(function(message) {
+                console.error(message);
+            });
+
+
+    </script>
+</body>
+</html>

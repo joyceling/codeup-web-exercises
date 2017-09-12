@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+
+    function practiceCoding () {
+        setTimeout(
+            () => console.log("I'm practicing writing code..."),
+            2000
+        );
+        // this doesn't have an argument so you can specify it in a callback later - it's much more flexible
+        next();
+    }
+
+    function practiceShortcuts() {
+        setTimeout(console.log("I'm practicing the refactoring shortcuts"),
+            3000
+        );
+        next();
+    }
+
+    function readNextLesson() {
+        setTimeout(console.log("I'm reading the next lesson"),
+            150
+        );
+        next();
+    }
+
+    practiceCoding();
+    practiceShortcuts();
+    readNextLesson();
+    console.log("yay, I completed them all!");
+
+
+    // synchronize functions so there is an order: practiceCoding, then practiceShortcuts, then readNextLesson - you use callbacks
+    // synchronizing using callbacks... must wrap in another function
+
+    // BEFORE PROMISES: CALLBACKS (callback hell!)
+    practiceCoding(
+        () => practiceShortcuts(
+            readNextLesson(
+                () => console.log("I did everything"))
+        )
+    );
+
+
+    // represent practiceCoding as a PROMISE, not an action
+    // resolve: success
+    // reject: failure
+    // "if" - I might or might not practice coding (promise always has two states)
+
+    let ifPracticedCoding = new Promise(function(resolve, reject) {
+        practiceCoding();
+        resolve();
+    });
+
+    let ifPracticeShortcuts = new Promise(function (resolve) {
+        practiceShortcuts();
+        resolve();
+    });
+
+
+    let ifReadNextLesson = new Promise(function (resolve) {
+       readNextLesson();
+       resolve();
+    });
+
+
+    ifPracticedCoding
+        .then(function () {
+            return ifPracticeShortcuts;
+        })
+        .then(function(){
+            return ifReadNextLesson;
+        })
+        .then(function() {
+            console.log("yay, I completed all!")
+        });
+        resolve();
+
+    // arrow syntax
+
+    ifPracticedCoding
+        .then(() => ifPracticeShortcuts)
+        .then(() => ifReadNextLesson)
+        .then(() => console.log("yay, I completed all!"));
+
+
+    // alternative way to write the above block of code
+    Promise.all([
+        ifPracticedCoding,
+        ifPracticeShortcuts,
+        ifReadNextLesson
+    ]).then(() => console.log("yay, I completed all!"))
+
+    </script>
+</body>
+</html>
