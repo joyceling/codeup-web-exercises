@@ -5,21 +5,62 @@
     <title>jQuery Exercise</title>
 </head>
 <body>
+<h1 id="header">Welcome!</h1>
+
+    <div class="text-block">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dicta dignissimos dolorum earum eveniet impedit iste modi mollitia, nemo non quidem ratione soluta temporibus veniam voluptas. Explicabo officiis quisquam velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis dolor odit quasi sint! Aliquam aspernatur assumenda aut delectus doloremque eos impedit iusto minima non, porro ratione, repellendus, sint vero.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquam consequatur corporis doloremque expedita molestias possimus, sed vero voluptatibus. Dolorum eum tempora velit! Illum provident, similique? Magni, modi, nesciunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequatur deleniti dolorum earum eligendi error est eum id illum impedit ipsa natus quia quibusdam quis sit totam unde, velit!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aliquam aspernatur at, consequuntur dicta, dolores eveniet excepturi fuga, impedit laboriosam laudantium maiores nam nesciunt quas quia rem similique veniam.</p>
+    </div>
+
+<h2 id="second-header">Why you should buy our product:</h2>
+
+    <ul class="product-list">
+        <li class="codeup">Reason #1</li>
+        <li class="codeup">Reason #2</li>
+        <li class="codeup">Reason #3</li>
+    </ul>
+
+<div class="text-block">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur dignissimos dolorum ea facere fuga ipsum itaque magni necessitatibus placeat praesentium ratione, voluptas? Deserunt error impedit molestiae tempore veniam voluptates!</p>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam beatae debitis dolor harum placeat quam, quisquam reiciendis. Corporis eos molestias officiis tempore. Architecto cupiditate excepturi, itaque modi officiis sapiente.</p>
+</div>
+
+    <script
+            src="jquery-2.2.4.min.js">
+    </script>
+
+    <script>
+        "use strict";
+
+        $(document).ready(function(){
+            var header = $("h1");
+            var paragraphs = $("p");
+            var li = $("li");
+
+            header.click(function() {
+                header.css("color", "green");
+            });
+
+            paragraphs.dblclick(function () {
+               paragraphs.css("font-size", "18px");
+            });
+
+            var hoverIn = function(){
+                li.css("color", "red");
+            };
+
+            var hoverOut = function(){
+                li.css("color", "white");
+            };
+
+            li.hover(hoverIn, hoverOut);
 
 
+        });
 
-
-<script
-        src="jquery-2.2.4.min.js">
-</script>
-
-<script>
-    "use strict";
-
-    $(document).ready(function(){
-        alert("Hi there!");
-    });
-
-</script>
+    </script>
 </body>
 </html>
