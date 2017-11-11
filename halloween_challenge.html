@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Halloween Challenge</title>
+</head>
+<body>
+    <script>
+        // FUNCTION ONE
+        function one (date) {
+            var presentmonth = 10;
+            var presentday = 24;
+
+            var month = date.substring(0, 2);
+            var monthInt = parseInt(month);
+
+            var day = date.substring(3,5);
+            var dayInt = parseInt(day);
+
+            var year = date.substring(6);
+            var yearInt = parseInt(year);
+
+            var age = (2017 - yearInt);
+
+            if (presentmonth - month <= 0) {
+                age = age - 1;
+                if (presentday - day <= 0) {
+                    return age;
+                } else {
+                    return 0;
+                }
+            }
+
+            return age;
+
+        }
+
+        console.log(one("02/16/1994"));
+        console.log(one("10/30/1965"));
+        //        console.log(one("11/04/1982"));
+//        console.log(one("12/25/2016"));
+//        console.log(one("03/02/2010"));
+
+
+        // FUNCTION TWO
+        function two (string) {
+            var output = string.split(" ");
+            console.log(output);
+        }
+
+        string = "The greatest food ever";
+        two(string);
+
+        // FUNCTION THREE
+        function three (str, substr) {
+            let counter = 0;
+            let array = str.split(" ");
+
+            for (let i = 0; i < array.length; i++) {
+                array[i] = array[i].toLowerCase();
+                if (array[i] === substr) {
+                    counter++;
+                }
+            }
+
+            return counter;
+
+        }
+
+        string = "coded coders coding code?";
+        substr = "code";
+
+
+        console.log(three(string, substr));
+
+
+        // FUNCTION FOUR
+        function four (string) {
+            var stringArray = string.split("");
+            console.log(stringArray);
+            var finalArray = [];
+
+            for (var i = 0; i < stringArray.length; i++) {
+                if (stringArray[i] !== "~" || "!" || "$" || "&" || "%" || "#" || "@" || "-" || "_" || "^" || "?" || " ") {
+                    finalArray.push(stringArray[i])
+                } else {
+                }
+            }
+
+            console.log(finalArray);
+        }
+
+        var string = "Happy ~!&%#@- Halloween";
+        var string1 = "I'll bet living in a nudist-colony takes all the fun out of Halloween!!";
+
+        four(string);
+
+        // FUNCTION FIVE
+        function five () {}
+    </script>
+</body>
+</html>
